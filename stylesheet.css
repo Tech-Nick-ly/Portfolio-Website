@@ -4,182 +4,258 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    text-decoration: none;
+    border:none;
+    outline: none;
+    scroll-behavior: smooth;
     font-family: 'Poppins', 'sans-serif'
 }
 
-/* ----- Customising the Body class ----- */
-body {
-    /* ----- Background Colour of Website ----- */
-    background: #1f242d
+
+
+
+/* ----------------------- FIXED VARIABLES ---------------------- */
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+    --nav-bar-color: rgb(16, 18, 19);
 }
 
 
-/* ----- Customising the Headers ----- */
+
+/* ----------------------- HTML FORMATTING ----------------------- */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+
+
+/* --------------- WEBSITE BACKGROUND CUSTOMISATION --------------- */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+/* --------------- SECTION CUSTOMISATION --------------- */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+
+/* ---------------- NAVIGATION BAR CUSTOMISATION ---------------- */
 .header {
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 50px;
-    padding: 20px 10%;
-    background: transparent;
+    padding: 2rem 9%;
+    background: var(--nav-bar-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100; 
-
-    /* --- Navbar colour --- */
-    background-color: rgb(29, 201, 201);
+    z-index: 100;
 }
 
-
-
-/* ----- Website Logo Formatting ----- */
-.website_logo {
-    font-size: 40px;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
-    cursor:default;
-}
-
-
-
-/* ----- Navbar Formatting ----- */
-.navbar a{
-    font-size: 18;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 5px 15px;
-}
-
-
-
-/* ----- Colour Of Tab When Hovering ----- */
-.navbar a:hover{
-    color: #A020F0;
-    box-shadow: 0 0 10px #0ef; 
-
-    /* --- Box surrounding Nav Options --- */
-    display: inline-block;
-    padding: 5px 15px;
-    background: rgb(37, 193, 204);
-    border-radius: 40px;
-    color: #1199d8;
-}
-
-
-
-/* ----- Colour Of Current Tab ----- */
-.navbar a.active{
-    color: rgb(17, 20, 231);
-
-
-    /* --- Box surrounding Nav Options --- */
-    display: inline-block;
-    padding: 5px 15px;
-    background: rgb(37, 193, 204);
-    border-radius: 40px;
-}
-
-
-/* --------------- Home Section Customisation --------------- */
-.home{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 10% 0;
-}
-
-/* ----- Home Content Customisation ----- */
-.home_content{
-    max-width: 600px;
-    color:#fff
-}
-
-/* --- Hello & Job --- */
-.home_content h1, h3 {
-    font-size: 32px;
+/* ----- Navbar Logo ----- */
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
     font-weight: 600;
-}
-
-.home_content h3 span{
-    color: #0ef
-}
-
-/* --- Name --- */
-.home_content h2{
-    font-size: 56px;
-    font-weight: 700;
-    margin: -3px 0;
-}
-
-/* --- Paragraph --- */
-.home_content p {
-    font-size: 16px;
+    cursor: default;
 
 }
 
+/* ----- Navbar Buttons ----- */
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
 
-/* ----- Social Media Icons ----- */
-.social_media a {
-    display: inline-flex;
+}
+
+/* ----- Active / Hover Navbar ----- */
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+/* ----- Menu Icon ----- */
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* ------------------ SECTION HEADER CUSTOMISATION -------------------- */
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    
+}
+
+
+/* ------------------- HOME SECTION CUSTOMISATION ------------------- */
+.home {
+    display:flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    width: 40px;
+}
+
+.home-img img{
+    width: 35vw;
+    height: auto;
+}
+
+/* ----- format hello and job ----- */
+.home-content h1, h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+
+/* ----- format name ----- */
+.home-content h2{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* ----- format job ----- */
+.home-content h3{
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+/* ----- format paragraph ----- */
+.home-content p{
+    font-size: 1.6rem;
+}
+
+/* ----- social media icons ----- */
+.social-media a{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height:4rem;
     background: transparent;
-    border: 2px solid #0ef;
-    border-radius: 90%;
-    color: #0ef;
-    text-decoration: none;
-    font-size: 30px;
-    transition: 1 ease;
-
-    margin-top: 35px;
-    margin-right: 30px;
-
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .3 ease;
 }
 
-/* --- Social Media Hover Color --- */
-.social_media a:hover{
-    background: #0ef;
-    color: #1f242d;
-    box-shadow: 0 0 20px #0ef; 
+.social-media :hover{
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
 }
 
-
-/* ----- Home Image ----- */
-.home_image img{
-    max-width: 450px;
-    margin-right: -20px;
-}
-
-
-
-/* ----- Download CV Button ----- */
-.button{
-    margin: 30px 0px;
+/* ----- download Cv button ----- */
+.button {
     display: inline-block;
-    padding: 12px 30px;
-    background: #0ef;
-    border-radius: 40px;
-    box-shadow: 0 0 10px #0ef; 
-    font-size: 18px;
-    color: #1f242d;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: box-shadow 0.3s ease;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5 ease;
 }
 
-/* --- Download CV Hover Button */
 .button:hover{
-    box-shadow: 0 0 20px #0ef;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: 0 0 1.5rem var(--main-color);
 }
 
+/* ------------------- ABOUT ME CUSTOMISATION ------------------- */
+.about {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+
+/* ------ about me image ----- */
+.about-img img{
+    width: 35vw;
+}
+
+.about-content h1{
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h2{
+    font-size: 2.6rem;
+}
+
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+
+
+/* ------------------- SKILLS CUSTOMISATION ------------------- */
+.skills h1{
+    margin-bottom: 5rem;
+}
+
+
+.skills-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+
+.skills-container .skills-box{
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    max-width: 33.3%;
+    max-height: auto;
+}
+
+.skills-container .skills-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.03);
+}
+
+.skills-box i{
+    font-size: 7rem;
+    color: var(--main-color)
+}
+
+.skills-box h2{
+    font-size: 2.6rem;
+}
+
+.skills-box p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
